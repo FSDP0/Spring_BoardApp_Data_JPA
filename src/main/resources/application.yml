@@ -1,0 +1,43 @@
+---
+# Common settings for Spring Boot
+
+# Server Running Port
+server:
+    port: 9000
+
+# Spring Boot options
+spring:
+    # Watching Static Resource Change
+    devtools:
+        livereload:
+            enabled: false
+    # Default Profile is local
+    profiles:
+        active: local
+    output:
+        ansi:
+            enabled: always
+    # Thymeleaf (Server Side Template Engine) Configuration
+    thymeleaf:
+        prefix: classpath:/templates/   # Thymeleaf View Template Path Config
+        suffix: .html                   # Thymeleaf View Template Extension Config
+        cache: false                    # Don't remain Thymeleaf cache
+        check-template-location: true   # templates dir file exist check
+
+---
+spring:
+    config:
+        activate:
+            on-profile: local
+
+---
+spring:
+    config:
+        activate:
+            on-profile: dev
+            
+---
+spring:
+    config:
+        activate:
+            on-profile: prod
