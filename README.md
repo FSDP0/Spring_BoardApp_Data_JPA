@@ -1,2 +1,2 @@
-# Spring_Sample_Application
-Sample Application
+## Spring_Sample_Application
+# Board Frontend
