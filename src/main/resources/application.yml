@@ -11,9 +11,9 @@ spring:
     devtools:
         livereload:
             enabled: false
-    # Default Profile is local
+    # # Default Profile is local
     profiles:
-        active: local
+        active: @spring.profiles.active@ 
     output:
         ansi:
             enabled: always
@@ -30,14 +30,22 @@ spring:
         activate:
             on-profile: local
 
+api:
+    url: http://localhost:8000/boards
+
 ---
 spring:
     config:
         activate:
             on-profile: dev
-            
+
+api:
+    url: http://board-api:8000/boards
 ---
 spring:
     config:
         activate:
             on-profile: prod
+
+api:
+    url: http://localhost:8000/boards

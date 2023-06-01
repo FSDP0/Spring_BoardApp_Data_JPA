@@ -2,10 +2,12 @@ package com.sample.demofe.board.client;
 
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 import com.sample.demofe.board.model.Board;
 
-@FeignClient(name = "BOARD-CLIENT", url = "http://board-api:8000/boards")
+@PropertySource("classpath:application.yml")
+@FeignClient(name = "BOARD-CLIENT", url = "${api.url}")
 public interface BoardClient {
 
     @GetMapping
