@@ -75,7 +75,7 @@ spring:
         # Database : MariaDB
         driver-class-name: org.mariadb.jdbc.Driver
         # URL IP link to local container db
-        url: jdbc:mariadb://host.docker.Inner:3306/board?characterEncoding=UTF-8&serverTimezone=UTC
+        url: jdbc:mariadb://host.docker.internal:3306/board?characterEncoding=UTF-8&serverTimezone=UTC
         # Database username
         username: root
         # Database user password
