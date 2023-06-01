@@ -1,2 +1,2 @@
 # Spring_Sample_Application
-Sample Application
+Board Backend Application
