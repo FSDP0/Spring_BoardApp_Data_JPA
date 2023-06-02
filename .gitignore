@@ -34,3 +34,6 @@ build/
 
 request.http
 Dockerfile
+application-local.yaml
+application-container.yaml
+application-kubernetes.yaml

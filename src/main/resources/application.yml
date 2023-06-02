@@ -29,23 +29,24 @@ spring:
     config:
         activate:
             on-profile: local
-
-api:
-    url: http://localhost:8000/boards
+    profile:
+        include:
+        - local
 
 ---
 spring:
     config:
         activate:
             on-profile: dev
+    profile:
+        include:
+        - container
 
-api:
-    url: http://board-api:8000/boards
 ---
 spring:
     config:
         activate:
             on-profile: prod
-
-api:
-    url: http://board-api-headless-svc.board-api.svc.cluster.local:8000/boards
+    profile:
+        include:
+        - kubernetes
