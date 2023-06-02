@@ -32,16 +32,9 @@ spring:
     config:
         activate:
             on-profile: local
-    # JPA Connection Setting
-    datasource:
-        # Database : MariaDB
-        driver-class-name: org.mariadb.jdbc.Driver
-        # URL IP link to localhost
-        url: jdbc:mariadb://localhost:3306/board?characterEncoding=UTF-8&serverTimezone=UTC
-        # Database username
-        username: root
-        # Database user password
-        password: 123456
+    profile:
+        include:
+        - local
 
 ---
 # Docker Container Environment Setting
@@ -51,16 +44,9 @@ spring:
     config:
         activate:
             on-profile: dev
-    # JPA Connection Setting
-    datasource:
-        # Database : MariaDB
-        driver-class-name: org.mariadb.jdbc.Driver
-        # URL IP link to container name
-        url: jdbc:mariadb://mariadb:3306/board?characterEncoding=UTF-8&serverTimezone=UTC
-        # Database username
-        username: root
-        # Database user password
-        password: 123456
+    profile:
+        include:
+        - container
 
 ---
 # Kubernetes Deployment Environment Setting
@@ -70,13 +56,6 @@ spring:
     config:
         activate:
             on-profile: prod
-    # JPA Connection Setting
-    datasource:
-        # Database : MariaDB
-        driver-class-name: org.mariadb.jdbc.Driver
-        # URL IP link to local container db
-        url: jdbc:mariadb://host.docker.internal:3306/board?characterEncoding=UTF-8&serverTimezone=UTC
-        # Database username
-        username: root
-        # Database user password
-        password: 123456
+    profile:
+        include:
+        - kubernetes
