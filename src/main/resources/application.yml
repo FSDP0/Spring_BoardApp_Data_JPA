@@ -48,4 +48,4 @@ spring:
             on-profile: prod
 
 api:
-    url: http://localhost:8000/boards
+    url: http://board-api-headless-svc.board-api.svc.cluster.local:8000/boards
