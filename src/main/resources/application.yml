@@ -1,9 +1,5 @@
 ---
-# Common settings for Spring Boot
-
-# Server Runnin Port
-server:
-    port: 8000
+### Common settings for Spring Boot
 
 # Spring Boot options
 spring:
@@ -23,9 +19,11 @@ spring:
     output:
         ansi:
             enabled: always
+    
+###
 
 ---
-# Local Environment Setting
+### Local Environment Setting
 spring:
     # Profile Name
     # Same configuration with application-local.yaml
@@ -35,9 +33,9 @@ spring:
     profile:
         include:
         - local
-
+###
 ---
-# Docker Container Environment Setting
+### Docker Container Environment Setting
 spring:
     # Profile Name
     # Same configuration with application-dev.yaml
@@ -46,10 +44,10 @@ spring:
             on-profile: dev
     profile:
         include:
-        - container
-
+        - dev
+###
 ---
-# Kubernetes Deployment Environment Setting
+### Kubernetes Deployment Environment Setting
 spring:
     # Profile Name
     # Same configuration with application-prod.yaml
@@ -58,4 +56,5 @@ spring:
             on-profile: prod
     profile:
         include:
-        - kubernetes
+        - prod
+###

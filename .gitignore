@@ -34,5 +34,10 @@ build/
 Dockerfile
 .env
 application-local.yaml
-application-container.yaml
-application-kubernetes.yaml
+application-dev.yaml
+application-prod.yaml
+
+boardApi_deploy.yaml
+boardApi_svc.yaml
+
+skaffold.yaml
