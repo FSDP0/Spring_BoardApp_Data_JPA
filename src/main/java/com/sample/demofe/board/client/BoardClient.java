@@ -2,11 +2,9 @@ package com.sample.demofe.board.client;
 
 import java.util.List;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 import com.sample.demofe.board.model.Board;
 
-@PropertySource("classpath:application.yml")
 @FeignClient(name = "BOARD-CLIENT", url = "${api.url}")
 public interface BoardClient {
 
@@ -24,4 +22,5 @@ public interface BoardClient {
 
     @DeleteMapping("/:{id}")
     public String deleteBoardPost(@PathVariable Long id);
+
 }

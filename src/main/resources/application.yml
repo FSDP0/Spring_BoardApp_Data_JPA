@@ -2,8 +2,8 @@
 # Common settings for Spring Boot
 
 # Server Running Port
-server:
-    port: 9000
+# server:
+#     port: 9000
 
 # Spring Boot options
 spring:
@@ -13,7 +13,8 @@ spring:
             enabled: false
     # # Default Profile is local
     profiles:
-        active: @spring.profiles.active@ 
+        active: @spring.profiles.active@
+        # active: local,dev,prod
     output:
         ansi:
             enabled: always
@@ -40,7 +41,7 @@ spring:
             on-profile: dev
     profile:
         include:
-        - container
+        - dev
 
 ---
 spring:
@@ -49,4 +50,4 @@ spring:
             on-profile: prod
     profile:
         include:
-        - kubernetes
+        - prod

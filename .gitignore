@@ -35,5 +35,9 @@ build/
 request.http
 Dockerfile
 application-local.yaml
-application-container.yaml
-application-kubernetes.yaml
+application-dev.yaml
+application-prod.yaml
+
+skaffold.yaml
+
+k8s/
