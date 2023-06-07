@@ -31,13 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
-
 request.http
 Dockerfile
-application-local.yaml
-application-dev.yaml
-application-prod.yaml
-
-skaffold.yaml
-
+application-*.yaml
 k8s/
+skaffold.yaml
