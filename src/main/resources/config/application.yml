@@ -6,6 +6,7 @@ spring:
     devtools:
         livereload:
             enabled: false
+    # Default Profile
     profiles:
         active: local
     # JPA Options Setting
