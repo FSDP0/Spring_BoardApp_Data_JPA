@@ -17,29 +17,6 @@
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.3-SNAPSHOT</spring-cloud.version>
 	</properties>
-	<profiles>
-		<profile>
-			<id>local</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<spring.profiles.active>local</spring.profiles.active>
-			</properties>
-		</profile>
-		<profile>
-			<id>dev</id>
-			<properties>
-				<spring.profiles.active>dev</spring.profiles.active>
-			</properties>
-		</profile>
-		<profile>
-			<id>prod</id>
-			<properties>
-				<spring.profiles.active>prod</spring.profiles.active>
-			</properties>
-		</profile>
-	</profiles>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -93,6 +70,12 @@
 
 	<build>
 		<resources>
+			<!-- Configuration Files -->
+			<resource>
+				<directory>src/main/resources/config</directory>
+				<filtering>true</filtering>
+			</resource>
+			<!-- Template Resources -->
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
@@ -113,6 +96,8 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- Resource Plugin for use profiling -->
+			<!-- Error occured by bootstrap files -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -122,6 +107,18 @@
 						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
 						<nonFilteredFileExtension>swf</nonFilteredFileExtension>
 					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+			<!-- jib Plugin for skaffold automation build -->
+			<!-- [to]   Image Name & Tag : docker hub repository-->
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<to>
+						<image>docker.io/fsdp/board-fe</image>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -136,5 +133,4 @@
 			</releases>
 		</repository>
 	</repositories>
-
 </project>
