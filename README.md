@@ -1,10 +1,10 @@
-## Spring_Sample_Application
-Board Backend Application
+# Spring_Sample_Application
+Board Application for Backend API Service
 
-# Version :
+### Version :
 3.1.0
 
-# Dependencies :
+### Dependencies :
 - Spring Web
 - Spring Boot Dev Tooles
 - Lombok
@@ -12,9 +12,9 @@ Board Backend Application
 - Spring Data JPA
 - Spring Doc
 
-# Application Profiles Path:
+### Application Profiles Path:
 - @src/main/resources/config/*.yaml
 
-# Plugins:
+### Plugins:
 - lombok
 - jib
