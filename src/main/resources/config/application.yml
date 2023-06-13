@@ -7,16 +7,16 @@ spring:
     devtools:
         livereload:
             enabled: false
-    # # Default Profile is local
+    # Default Profile is local
+    # Profiles : local | dev | prod
     profiles:
         active: local
-        # active: local,dev,prod
+    # Spring output logs colorize
     output:
         ansi:
             enabled: always
     # Thymeleaf (Server Side Template Engine) Configuration
     thymeleaf:
-        # prefix: classpath:/../templates/   # Thymeleaf View Template Path Config
         prefix: classpath:/templates/   # Thymeleaf View Template Path Config
         suffix: .html                   # Thymeleaf View Template Extension Config
         cache: false                    # Don't remain Thymeleaf cache
