@@ -53,8 +53,8 @@
 		<!-- Add Dependency for use Swagger UI -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.7.0</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.1.0</version>
 		</dependency>
 	</dependencies>
 
@@ -85,9 +85,6 @@
 				<artifactId>jib-maven-plugin</artifactId>
 				<version>3.3.2</version>
 				<configuration>
-					<from>
-						<image>eclipse-temurin:17-jre-alpine</image>
-					</from>
 					<to>
 						<image>docker.io/fsdp/board-api</image>
 					</to>

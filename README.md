@@ -1,7 +1,7 @@
 # Spring_Sample_Application
 Board Application for Backend API Service
 
-### Version :
+### Version : 
 3.1.0
 
 ### Dependencies :
