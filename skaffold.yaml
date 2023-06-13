@@ -1,0 +1,44 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: demo-api
+profiles:
+  - name: prod-kind
+    build:
+      tagPolicy:
+        envTemplate:
+          template: "{{.RELEASE}}"
+      local:
+        push: true  # Do not local test
+      artifacts:
+        - image: docker.io/fsdp/board-api
+          jib:
+            type: maven                                                         # Jib build pack type
+            args:
+              - -D skipTests
+              - -Djib.container.environment=SPRING_PROFILES_ACTIVE=prodKind     # Activate profile name : prodKind
+            fromImage: eclipse-temurin:17-jre-alpine                            # Base Image
+    manifests:
+      kustomize:
+        paths:
+          - k8s/overlays/kind
+
+  - name: prod-k3d
+    build:
+      tagPolicy:
+        envTemplate:
+          template: "{{.RELEASE}}"
+      local:
+        push: true
+      artifacts:
+        - image: docker.io/fsdp/board-api
+          jib:
+            type: maven                                                         # Jib build pack type
+            args:
+              - -D skipTests
+              - -Djib.container.environment=SPRING_PROFILES_ACTIVE=prodK3d      # Activate profile name : prodK3d
+            fromImage: eclipse-temurin:17-jre-alpine                            # Base Image
+    manifests:
+      kustomize:
+        paths:
+          - k8s/overlays/k3d

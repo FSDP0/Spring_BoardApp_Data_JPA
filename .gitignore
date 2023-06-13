@@ -34,4 +34,4 @@ build/
 Dockerfile
 # application-*.yaml
 k8s/
-skaffold.yaml
+# skaffold.yaml
