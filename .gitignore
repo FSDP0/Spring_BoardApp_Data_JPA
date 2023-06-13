@@ -34,5 +34,5 @@ build/
 request.http
 Dockerfile
 # application-*.yaml
-k8s/
+# k8s/
 # skaffold.yaml
