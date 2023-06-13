@@ -1,5 +1,5 @@
 # Spring_Sample_Application
-Board Application for Backend API Service
+Board Application for Backend API Service with Swagger UI
 
 ### Version : 
 3.1.0
