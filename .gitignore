@@ -32,6 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 Dockerfile
-application-*.yaml
+# application-*.yaml
 k8s/
 skaffold.yaml

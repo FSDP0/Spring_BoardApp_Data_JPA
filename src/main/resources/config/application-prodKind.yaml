@@ -1,0 +1,19 @@
+server:
+    port: 8000
+
+logging:
+    level:
+        org:
+            springframework: WARN
+
+# JPA Connection Setting
+spring:
+    datasource:
+        # Database : MariaDB
+        driver-class-name: org.mariadb.jdbc.Driver
+        # URL IP link to Local Database 
+        url: jdbc:mariadb://host.docker.internal:3306/board
+        # Database username
+        username: root
+        # Database user password
+        password: 123456
