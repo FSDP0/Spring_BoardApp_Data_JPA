@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: board-api-ingress
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+    ingress.kubernetes.io/x-forwarded-prefix: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: board.api.com   # Set HostName Config File
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: board-api-headless-svc
+            port:
+              number: 8000

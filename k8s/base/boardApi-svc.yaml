@@ -1,0 +1,16 @@
+# Define Headless Service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: board-api-headless-svc
+spec:
+  selector:
+    app: board-api
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - name: http        # Matching with Deployment Container Port 
+    port: 8000        # Service forward port
+    targetPort: rest  # Inner Service port
+    protocol: TCP     # Protocol configuration

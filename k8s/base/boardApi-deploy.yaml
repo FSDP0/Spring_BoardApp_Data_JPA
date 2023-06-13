@@ -1,0 +1,44 @@
+# Create Namespace
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: board-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: board-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: board-api
+  template:
+    spec:
+      # Define Container Infomations
+      containers:
+      - name: board-api
+        image: fsdp/board-api:1.0.0
+        ports:
+        - name: rest                # Matching with Service Port Name
+          containerPort: 8000
+        # Processor Resources
+        resources:
+          requests:
+            cpu: 500m
+            memory: 500M
+          limits:
+            cpu: "1"
+            memory: 1Gi
+        # Deployment TimeZone Setting
+        volumeMounts:
+        - name: tz-seoul
+          mountPath: /etc/localtime
+      volumes:
+      - name: tz-seoul
+        hostPath:
+          path: /usr/share/zoneinfo/Asia/Seoul
+      - name: config
+        hostPath:
+          path: /config
