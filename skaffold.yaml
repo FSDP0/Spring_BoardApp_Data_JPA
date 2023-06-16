@@ -5,6 +5,9 @@ metadata:
 profiles:
 - name: default
   build:
+    tagPolicy:
+      envTemplate:
+        template: "{{.RELEASE}}"
     local:
       push: true
     artifacts:
@@ -17,7 +20,7 @@ profiles:
   manifests:
     kustomize:
       paths:
-      - k8s/base
+      - k8s/overlays/np
     # rawYaml:
     # - k8s/default/*.yaml
 - name: ingress-kind

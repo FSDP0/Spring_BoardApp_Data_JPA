@@ -10,7 +10,7 @@ namespace: board-fe
 images:
   - name: fsdp/board-fe
     newName: docker.io/fsdp/board-fe
-    newTag: 1.0.0.prod-k3d-ingress
+    newTag: 1.0.0.prod-k3d-np
 
 commonLabels:
   app: board-fe
