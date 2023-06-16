@@ -4,3 +4,13 @@ kind: Kustomization
 resources:
   - boardApi-deploy.yaml
   - boardApi-svc.yaml
+
+namespace: board-api
+
+images:
+  - name: fsdp/board-api
+    newName: docker.io/fsdp/board-api
+    newTag: 1.0.0.prod-np
+
+commonLabels:
+  app: board-api
